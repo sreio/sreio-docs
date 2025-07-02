@@ -15,16 +15,14 @@ export default defineNavbarConfig([
     text: '编程语言',
     items: [
       {
+        text: 'Golang基础入门', 
+        link: '/golang_study/',
+        icon: 'emojione:bookmark-tabs',
+      },
+      {
         text: 'php',
         items: [
           { text: '示例', link: '/notes/php/readme.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: 'golang基础入门',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
           { text: '示例-markdown', link: '/notes/demo/markdown.md' },
         ]
       },

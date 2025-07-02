@@ -33,13 +33,28 @@ const demoNote = defineNoteConfig({
   sidebar: 'auto',
 })
 
+
+const golangStudy = defineNoteConfig({
+  dir: 'golang_study',
+  link: '/golang_study/',
+  sidebar: [
+    {
+      items: [
+        '1.命令',
+        '2.Init函数和main函数'
+      ]
+    }
+  ]
+})
+
+
 /**
  * 导出所有的 note
  * 每一个 note 都应该填入到 `notes.notes` 数组中
  * （DemoNote 为参考示例，如果不需要它，请删除）
  */
 export default defineNotesConfig({
-  dir: 'notes',
+  dir: '/',
   link: '/',
-  notes: [demoNote],
+  notes: [golangStudy, demoNote],
 })

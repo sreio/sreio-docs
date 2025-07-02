@@ -32,9 +32,9 @@ export default defineUserConfig({
     // hostname: 'https://your_site_url',
 
     /* 文档仓库配置，用于 editLink */
-    // docsRepo: '',
-    // docsDir: 'docs',
-    // docsBranch: '',
+    docsRepo: 'https://github.com/sreio/sreio-docs',
+    docsDir: 'src',
+    docsBranch: 'main',
 
     /* 页内信息 */
     // editLink: true,
@@ -101,7 +101,7 @@ export default defineUserConfig({
     // },
 
     /* 文章字数统计、阅读时间，设置为 false 则禁用 */
-    // readingTime: true,
+    readingTime: true,
 
     /**
       * markdown
