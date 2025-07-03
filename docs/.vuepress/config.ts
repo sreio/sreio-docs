@@ -41,6 +41,12 @@ export default defineUserConfig({
     lastUpdated: true,
     contributors: {
       mode: 'block',
+      info: [
+        {
+          username: 'sreio', // github username
+          alias: ['weidada'], // 别名，本地 git 配置中的用户名
+        }
+      ]
     },
     changelog: {
       maxCount: 10,
