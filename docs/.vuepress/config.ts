@@ -39,8 +39,16 @@ export default defineUserConfig({
     /* 页内信息 */
     editLink: true,
     lastUpdated: true,
-    contributors: true,
-    changelog: false,
+    contributors: {
+      mode: 'block',
+    },
+    changelog: {
+      maxCount: 10,
+      repoUrl: 'https://github.com/sreio/sreio-docs',
+      commitUrlPattern: ':repo/commit/:hash',
+      issueUrlPattern: ':repo/issues/:issue',
+      tagUrlPattern: ':repo/releases/tag/:tag'
+    },
 
     /**
      * 博客
@@ -108,6 +116,7 @@ export default defineUserConfig({
       * @see https://theme-plume.vuejs.press/config/markdown/
       */
     markdown: {
+      codeTree: true,
     //   abbr: true,         // 启用 abbr 语法  *[label]: content
     //   annotation: true,   // 启用 annotation 语法  [+label]: content
     //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
