@@ -37,14 +37,15 @@ const demoNote = defineNoteConfig({
 const golangStudy = defineNoteConfig({
   dir: 'golang_study',
   link: '/golang_study/',
-  sidebar: [
-    {
-      items: [
-        '1.命令',
-        '2.Init函数和main函数'
-      ]
-    }
-  ]
+  sidebar: 'auto'
+  // sidebar: [
+  //   {
+  //     items: [
+  //       '1.命令',
+  //       '2.Init函数和main函数'
+  //     ]
+  //   }
+  // ]
 })
 
 

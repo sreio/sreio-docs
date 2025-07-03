@@ -33,14 +33,14 @@ export default defineUserConfig({
 
     /* 文档仓库配置，用于 editLink */
     docsRepo: 'https://github.com/sreio/sreio-docs',
-    docsDir: 'src',
+    docsDir: 'docs',
     docsBranch: 'main',
 
     /* 页内信息 */
-    // editLink: true,
-    // lastUpdated: true,
-    // contributors: true,
-    // changelog: false,
+    editLink: true,
+    lastUpdated: true,
+    contributors: true,
+    changelog: false,
 
     /**
      * 博客
@@ -137,12 +137,12 @@ export default defineUserConfig({
     //   echarts: true,      // 启用 ECharts
     //   mermaid: true,      // 启用 mermaid
     //   flowchart: true,    // 启用 flowchart
-    //   image: {
-    //     figure: true,     // 启用 figure
-    //     lazyload: true,   // 启用图片懒加载
-    //     mark: true,       // 启用图片标记
-    //     size: true,       // 启用图片大小
-    //   },
+      image: {
+        figure: true,     // 启用 figure
+        lazyload: true,   // 启用图片懒加载
+        mark: true,       // 启用图片标记
+        size: true,       // 启用图片大小
+      },
     //   include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
       imageSize: 'all', // 启用 自动填充 图片宽高属性，避免页面抖动
     },

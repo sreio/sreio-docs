@@ -13,11 +13,12 @@ export default defineNavbarConfig([
   // { text: '归档', link: '/blog/archives/' },
   {
     text: '编程语言',
+    icon: 'emojione:blue-book',
     items: [
       {
         text: 'Golang基础入门', 
         link: '/golang_study/',
-        icon: 'emojione:bookmark-tabs',
+        icon: 'logos:go',
       },
       {
         text: 'php',
@@ -37,6 +38,7 @@ export default defineNavbarConfig([
   },
   {
     text: '缓存&数据库',
+    icon: 'streamline-plump-color:database',
     items: [
       {
         text: 'mysql',
@@ -61,56 +63,55 @@ export default defineNavbarConfig([
       },
     ]
   },
+
   {
-    text: '网络',
+    text: '更多',
+    icon: 'icon-park:more-app',
     items: [
-      {
-        text: 'mysql',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-    ]
-  },
-  {
-    text: '数据结构与算法',
-    items: [
-      {
-        text: 'mysql',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-    ]
-  },
-  {
-    text: 'Linux',
-    items: [
-      {
-        text: 'mysql',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-    ]
-  },
-   {
-    text: '面试宝典',
-    items: [
-      {
-        text: 'mysql',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
+        {
+          text: '网络',
+          icon: 'streamline-ultimate-color:network',
+          items: [
+            {
+              text: 'mysql',
+              link: '/notes/demo/README.md'
+            },
+          ]
+        },
+        {
+          text: '数据结构与算法',
+          icon: 'arcticons:algorithms',
+          items: [
+            {
+              text: 'mysql',
+              link: '/notes/demo/README.md'
+            },
+          ]
+        },
+        {
+          text: 'Linux',
+          icon: 'devicon:linux',
+          items: [
+            {
+              text: 'mysql',
+              link: '/notes/demo/README.md'
+            },
+          ]
+        },
+        {
+          text: '面试宝典',
+          items: [
+            {
+              text: 'mysql',
+              link: '/notes/demo/README.md'
+            },
+          ]
+        }
     ]
   },
   {
     text: '其他',
+    icon: 'streamline-stickies-color:lab-tools',
     items: [
       {
         text: '工具',
