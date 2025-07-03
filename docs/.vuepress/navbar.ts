@@ -15,25 +15,8 @@ export default defineNavbarConfig([
     text: '编程语言',
     icon: 'emojione:blue-book',
     items: [
-      {
-        text: 'Golang基础入门', 
-        link: '/golang_study/',
-        icon: 'logos:go',
-      },
-      {
-        text: 'php',
-        items: [
-          { text: '示例', link: '/notes/php/readme.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: 'golang',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
+      { text: 'Golang', icon: 'logos:go', link: '/golang/'},
+      { text: 'PHP', icon: 'vscode-icons:file-type-php2', link: '/php/'},
     ]
   },
   {
@@ -42,112 +25,45 @@ export default defineNavbarConfig([
     items: [
       {
         text: 'mysql',
+        icon: 'devicon:mysql',
         items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
+          { text: '实践技巧', link: '/notes/demo/README.md' },
+          { text: 'Mysql45讲', link: '/notes/demo/markdown.md' },
         ]
       },
       {
-        text: 'redis',
+        text: 'Redis',
+        icon: 'devicon:redis',
         items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
+          { text: '数据结构', link: '/notes/demo/README.md' },
         ]
       },
-      {
-        text: 'ELK',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
+      { text: 'ELK', icon: 'streamline-plump-color:file-report-flat', link: '/notes/demo/README.md'},
+      { text: 'etcd', icon: 'logos:etcd', link: '/notes/demo/README.md'},
+      { text: 'clickhouse', icon: 'devicon:clickhouse', link: '/notes/demo/README.md'},
+      { text: 'Mongodb', icon: 'logos:mongodb-icon', link: '/notes/demo/README.md'},
     ]
   },
-
   {
     text: '更多',
     icon: 'icon-park:more-app',
     items: [
-        {
-          text: '网络',
-          icon: 'streamline-ultimate-color:network',
-          items: [
-            {
-              text: 'mysql',
-              link: '/notes/demo/README.md'
-            },
-          ]
-        },
-        {
-          text: '数据结构与算法',
-          icon: 'arcticons:algorithms',
-          items: [
-            {
-              text: 'mysql',
-              link: '/notes/demo/README.md'
-            },
-          ]
-        },
-        {
-          text: 'Linux',
-          icon: 'devicon:linux',
-          items: [
-            {
-              text: 'mysql',
-              link: '/notes/demo/README.md'
-            },
-          ]
-        },
-        {
-          text: '面试宝典',
-          items: [
-            {
-              text: 'mysql',
-              link: '/notes/demo/README.md'
-            },
-          ]
-        }
+        { text: 'Linux', icon: 'devicon:linux', link: '/notes/demo/README.md'},
+        { text: '消息队列', icon: 'devicon:rabbitmq', link: '/notes/demo/README.md'},
+        { text: '数据结构与算法', icon: 'icon-park:brain', link: '/notes/demo/README.md'},
+        { text: '网络协议', icon: 'streamline-plump-color:cloud-data-transfer-flat', link: '/notes/demo/README.md'},
+        { text: '面试宝典', icon: 'openmoji:interview', link: '/notes/demo/README.md'},
+        { text: 'VPN', icon: 'streamline-plump-color:ladder', link: '/notes/demo/README.md'},
+        { text: '驾照考试', icon: 'streamline-ultimate-color:adventure-car-truck-1', link: '/notes/demo/README.md'},
     ]
   },
   {
-    text: '其他',
-    icon: 'streamline-stickies-color:lab-tools',
+    text: '杂录',
+    icon: 'icon-park:other',
     items: [
-      {
-        text: '工具',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: '探索',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: '游戏',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: 'VPN',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: '驾照考试',
-        items: [
-          { text: '示例', link: '/notes/demo/README.md' },
-          { text: '示例-markdown', link: '/notes/demo/markdown.md' },
-        ]
-      },
+      { text: '工具', icon: 'twemoji:hammer-and-wrench', link: '/notes/demo/README.md'},
+      { text: '探索', icon: 'streamline-stickies-color:lab-tools', link: '/notes/demo/README.md'},
+      { text: '游戏', icon: 'icon-park:game', link: '/notes/demo/README.md'},
     ]
   },
 ])
