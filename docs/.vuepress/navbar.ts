@@ -61,9 +61,9 @@ export default defineNavbarConfig([
     text: '杂录',
     icon: 'icon-park:other',
     items: [
-      { text: '工具', icon: 'twemoji:hammer-and-wrench', link: '/notes/demo/README.md'},
-      { text: '探索', icon: 'streamline-stickies-color:lab-tools', link: '/notes/demo/README.md'},
-      { text: '游戏', icon: 'icon-park:game', link: '/notes/demo/README.md'},
+      { text: '工具', icon: 'twemoji:hammer-and-wrench', link: '/other/tools/'},
+      { text: '探索', icon: 'streamline-stickies-color:lab-tools', link: '/other/streamline/'},
+      { text: '游戏', icon: 'icon-park:game', link: '/other/game/'},
     ]
   },
 ])

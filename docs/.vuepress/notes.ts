@@ -33,6 +33,12 @@ const golangStudy = defineNoteConfig({
   sidebar: 'auto'
 })
 
+const otherConfig = defineNoteConfig({
+  dir: '/other/',
+  link: '/other/',
+  sidebar: 'auto',
+})
+
 
 /**
  * 导出所有的 note
@@ -42,5 +48,5 @@ const golangStudy = defineNoteConfig({
 export default defineNotesConfig({
   dir: '/',
   link: '/',
-  notes: [golangStudy],
+  notes: [golangStudy, otherConfig],
 })
