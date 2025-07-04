@@ -122,12 +122,13 @@ export default defineUserConfig({
       * @see https://theme-plume.vuejs.press/config/markdown/
       */
     markdown: {
+      field: true,
       codeTree: true,
-    //   abbr: true,         // 启用 abbr 语法  *[label]: content
-    //   annotation: true,   // 启用 annotation 语法  [+label]: content
+      abbr: true,         // 启用 abbr 语法  *[label]: content
+      annotation: true,   // 启用 annotation 语法  [+label]: content
     //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
-    //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
-    //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
+      caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
+      plot: true,         // 启用隐秘文本语法 !!xxxx!!
     //   bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
     //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
     //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
@@ -138,7 +139,7 @@ export default defineUserConfig({
     //   codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)
     //   jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
     //   npmTo: true,        // 启用 npm-to 容器  ::: npm-to
-    //   demo: true,         // 启用 demo 容器  ::: demo
+      // demo: true,         // 启用 demo 容器  ::: demo
       repl: {             // 启用 代码演示容器
         go: true,         // ::: go-repl
     //     rust: true,       // ::: rust-repl
