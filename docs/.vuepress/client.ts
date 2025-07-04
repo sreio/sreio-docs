@@ -7,6 +7,10 @@ import RepoCard from 'vuepress-theme-plume/features/RepoCard.vue'
 // import CustomComponent from './theme/components/Custom.vue'
 import CustomDateTime from './theme/components/DateTime.vue'
 import Yiyan from './theme/components/Yiyan.vue'
+import AsideNav from './theme/components/AsideNav.vue'
+import { h } from 'vue'
+import { Layout } from 'vuepress-theme-plume/client'
+
 
 // import './theme/styles/custom.css'
 
@@ -22,5 +26,10 @@ export default defineClientConfig({
     // app.component('CustomComponent', CustomComponent)
     app.component('CustomDateTime', CustomDateTime)
     app.component('Yiyan', Yiyan)
+  },
+  layouts: {
+    Layout: h(Layout, null, {
+      'aside-outline-after': () => h(AsideNav),
+    }),
   },
 })
