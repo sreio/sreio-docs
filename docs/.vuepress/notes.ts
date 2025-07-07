@@ -33,9 +33,9 @@ const golangStudy = defineNoteConfig({
   sidebar: 'auto'
 })
 
-const otherConfig = defineNoteConfig({
-  dir: '/other/',
-  link: '/other/',
+const aiConfig = defineNoteConfig({
+  dir: '/ai/',
+  link: '/ai/',
   sidebar: 'auto',
 })
 
@@ -48,5 +48,5 @@ const otherConfig = defineNoteConfig({
 export default defineNotesConfig({
   dir: '/',
   link: '/',
-  notes: [golangStudy, otherConfig],
+  notes: [golangStudy, aiConfig],
 })

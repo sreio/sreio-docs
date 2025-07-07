@@ -48,6 +48,7 @@ export default defineNavbarConfig([
     text: '更多',
     icon: 'icon-park:more-app',
     items: [
+        { text: 'Ai', icon: 'streamline-flex-color:ai-chip-robot', link: '/ai/'},
         { text: 'Linux', icon: 'devicon:linux', link: '/notes/demo/README.md'},
         { text: '消息队列', icon: 'devicon:rabbitmq', link: '/notes/demo/README.md'},
         { text: '数据结构与算法', icon: 'icon-park:brain', link: '/notes/demo/README.md'},
@@ -57,13 +58,5 @@ export default defineNavbarConfig([
         { text: '驾照考试', icon: 'streamline-ultimate-color:adventure-car-truck-1', link: '/notes/demo/README.md'},
     ]
   },
-  {
-    text: '杂录',
-    icon: 'icon-park:other',
-    items: [
-      { text: '工具', icon: 'twemoji:hammer-and-wrench', link: '/other/tools/'},
-      { text: '探索', icon: 'streamline-stickies-color:lab-tools', link: '/other/streamline/'},
-      { text: '游戏', icon: 'icon-park:game', link: '/other/game/'},
-    ]
-  },
+  {  text: '网站导航', icon: 'icon-park:other', link: '/sites/'},
 ])
