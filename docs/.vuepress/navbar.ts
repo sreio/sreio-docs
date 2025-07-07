@@ -23,25 +23,12 @@ export default defineNavbarConfig([
     text: '缓存&数据库',
     icon: 'streamline-plump-color:database',
     items: [
-      {
-        text: 'mysql',
-        icon: 'devicon:mysql',
-        items: [
-          { text: '实践技巧', link: '/notes/demo/README.md' },
-          { text: 'Mysql45讲', link: '/notes/demo/markdown.md' },
-        ]
-      },
-      {
-        text: 'Redis',
-        icon: 'devicon:redis',
-        items: [
-          { text: '数据结构', link: '/notes/demo/README.md' },
-        ]
-      },
-      { text: 'ELK', icon: 'streamline-plump-color:file-report-flat', link: '/notes/demo/README.md'},
-      { text: 'etcd', icon: 'logos:etcd', link: '/notes/demo/README.md'},
-      { text: 'clickhouse', icon: 'devicon:clickhouse', link: '/notes/demo/README.md'},
-      { text: 'Mongodb', icon: 'logos:mongodb-icon', link: '/notes/demo/README.md'},
+      { text: 'mysql', icon: 'devicon:mysql', link: '/mysql/'},
+      { text: 'Redis', icon: 'devicon:redis', link: '/redis/'},
+      { text: 'ELK', icon: 'streamline-plump-color:file-report-flat', link: '/ELK/'},
+      { text: 'etcd', icon: 'logos:etcd', link: '/etcd/'},
+      { text: 'clickhouse', icon: 'devicon:clickhouse', link: '/clickhouse/'},
+      { text: 'Mongodb', icon: 'logos:mongodb-icon', link: '/mongodb/'},
     ]
   },
   {

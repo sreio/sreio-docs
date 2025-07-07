@@ -89,6 +89,43 @@ const queueConfig = defineNoteConfig({
   sidebar: 'auto',
 })
 
+const mysqlConfig = defineNoteConfig({
+  dir: '/mysql/',
+  link: '/mysql/',
+  sidebar: 'auto',
+})
+
+const redisConfig = defineNoteConfig({
+  dir: '/redis/',
+  link: '/redis/',
+  sidebar: 'auto',
+})
+
+const elkConfig = defineNoteConfig({
+  dir: '/ELK/',
+  link: '/ELK/',
+  sidebar: 'auto',
+})
+
+const etcdConfig = defineNoteConfig({
+  dir: '/etcd/',
+  link: '/etcd/',
+  sidebar: 'auto',
+})
+
+
+const clickhouseConfig = defineNoteConfig({
+  dir: '/clickhouse/',
+  link: '/clickhouse/',
+  sidebar: 'auto',
+})
+
+const mongodbConfig = defineNoteConfig({
+  dir: '/mongodb/',
+  link: '/mongodb/',
+  sidebar: 'auto',
+})
+
 /**
  * 导出所有的 note
  * 每一个 note 都应该填入到 `notes.notes` 数组中
@@ -108,5 +145,11 @@ export default defineNotesConfig({
     linuxConfig,
     interviewConfig,
     queueConfig,
+    mysqlConfig,
+    redisConfig,
+    elkConfig,
+    etcdConfig,
+    clickhouseConfig,
+    mongodbConfig,
   ],
 })
