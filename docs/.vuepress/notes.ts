@@ -40,6 +40,37 @@ const aiConfig = defineNoteConfig({
 })
 
 
+const brainConfig = defineNoteConfig({
+  dir: '/brain/',
+  link: '/brain/',
+  sidebar: 'auto',
+})
+
+const itConfig = defineNoteConfig({
+  dir: '/it/',
+  link: '/it/',
+  sidebar: 'auto',
+})
+
+const networkConfig = defineNoteConfig({
+  dir: '/network/',
+  link: '/network/',
+  sidebar: 'auto',
+})
+
+const vpnConfig = defineNoteConfig({
+  dir: '/vpn/',
+  link: '/vpn/',
+  sidebar: 'auto',
+})
+
+const carConfig = defineNoteConfig({
+  dir: '/驾照考试/',
+  link: '/驾照考试/',
+  sidebar: 'auto',
+})
+
+
 /**
  * 导出所有的 note
  * 每一个 note 都应该填入到 `notes.notes` 数组中
@@ -48,5 +79,13 @@ const aiConfig = defineNoteConfig({
 export default defineNotesConfig({
   dir: '/',
   link: '/',
-  notes: [golangStudy, aiConfig],
+  notes: [
+    golangStudy, 
+    aiConfig, 
+    brainConfig,
+    itConfig,
+    networkConfig,
+    vpnConfig,
+    carConfig,
+  ],
 })
