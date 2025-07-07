@@ -70,10 +70,15 @@ const carConfig = defineNoteConfig({
   sidebar: 'auto',
 })
 
-
 const linuxConfig = defineNoteConfig({
   dir: '/linux/',
   link: '/linux/',
+  sidebar: 'auto',
+})
+
+const interviewConfig = defineNoteConfig({
+  dir: '/interview/',
+  link: '/interview/',
   sidebar: 'auto',
 })
 
@@ -95,5 +100,6 @@ export default defineNotesConfig({
     vpnConfig,
     carConfig,
     linuxConfig,
+    interviewConfig,
   ],
 })

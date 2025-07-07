@@ -53,7 +53,7 @@ export default defineNavbarConfig([
         { text: '消息队列', icon: 'devicon:rabbitmq', link: '/notes/demo/README.md'},
         { text: '数据结构与算法', icon: 'icon-park:brain', link: '/brain/'},
         { text: '网络协议', icon: 'streamline-plump-color:cloud-data-transfer-flat', link: '/network/'},
-        { text: '面试宝典', icon: 'openmoji:interview', link: '/notes/demo/README.md'},
+        { text: '面试宝典', icon: 'openmoji:interview', link: '/interview/'},
         { text: 'IT名词介绍', icon: 'logos:internetexplorer', link: '/it/'},
         { text: 'VPN', icon: 'streamline-plump-color:ladder', link: '/vpn/'},
         { text: '驾照考试', icon: 'streamline-ultimate-color:adventure-car-truck-1', link: '/驾照考试/'},
