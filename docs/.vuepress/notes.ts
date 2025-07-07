@@ -71,6 +71,13 @@ const carConfig = defineNoteConfig({
 })
 
 
+const linuxConfig = defineNoteConfig({
+  dir: '/linux/',
+  link: '/linux/',
+  sidebar: 'auto',
+})
+
+
 /**
  * 导出所有的 note
  * 每一个 note 都应该填入到 `notes.notes` 数组中
@@ -87,5 +94,6 @@ export default defineNotesConfig({
     networkConfig,
     vpnConfig,
     carConfig,
+    linuxConfig,
   ],
 })
