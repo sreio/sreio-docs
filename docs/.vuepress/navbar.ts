@@ -50,7 +50,7 @@ export default defineNavbarConfig([
     items: [
         { text: 'Ai', icon: 'streamline-flex-color:ai-chip-robot', link: '/ai/'},
         { text: 'Linux', icon: 'devicon:linux', link: '/linux/'},
-        { text: '消息队列', icon: 'devicon:rabbitmq', link: '/notes/demo/README.md'},
+        { text: '消息队列', icon: 'devicon:rabbitmq', link: '/queue/'},
         { text: '数据结构与算法', icon: 'icon-park:brain', link: '/brain/'},
         { text: '网络协议', icon: 'streamline-plump-color:cloud-data-transfer-flat', link: '/network/'},
         { text: '面试宝典', icon: 'openmoji:interview', link: '/interview/'},
