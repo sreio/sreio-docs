@@ -13,7 +13,7 @@ config:
     记录学习中遇到的知识点和各种有趣的小技巧。 <CustomDateTime />
   </Card>
 
-  <RepoCard repo="sreio/docs" />
+  <RepoCard repo="sreio/sreio-docs" />
 </CardGrid>
 
 
