@@ -29,7 +29,7 @@ export default defineUserConfig({
 
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-    // hostname: 'https://your_site_url',
+    hostname: 'https://docs.sreio.com',
 
     /* 文档仓库配置，用于 editLink */
     docsRepo: 'https://github.com/sreio/sreio-docs',
@@ -189,7 +189,7 @@ export default defineUserConfig({
      * 资源链接替换
      * @see https://theme-plume.vuejs.press/guide/features/replace-assets/
      */
-    // replaceAssets: 'https://cdn.example.com',
+    replaceAssets: 'https://docs.sreio.com',
 
     /**
      * 加密功能
