@@ -122,7 +122,7 @@ protected function resolve($abstract, $parameters = [], $raiseEvents = true)
 	... ...
 ```
 
-很容易看出来，make方法调用resolve时，并没有指定$raiseEvents的参数值，因此可以认为make方法解析实例时，`$raiseEvents`值就是true。这样我们就能理解了，make解析实例时，一定会去执行Container的fireResolvingCallbacks方法。那这个方法做了什么呢？
+很容易看出来，make方法调用resolve时，并没有指定`$raiseEvents`的参数值，因此可以认为make方法解析实例时，`$raiseEvents`值就是true。这样我们就能理解了，make解析实例时，一定会去执行Container的fireResolvingCallbacks方法。那这个方法做了什么呢？
 
 ```php
 /**

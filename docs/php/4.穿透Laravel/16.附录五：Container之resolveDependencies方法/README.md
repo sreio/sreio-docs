@@ -44,7 +44,7 @@ protected function resolveDependencies(array $dependencies)
 }
 ````
 
-首先我们需要清楚的是，$dependencies是通过反射的方式获取到的对象构造函数需要的参数值。由于参数值可能很多，因此这里是传递的数组。但是这个数组大家需要注意的是，每个数组中的元素，并不是简单的字符串类型的值，而是对象类型的值。那这个对象的类型是什么呢？
+首先我们需要清楚的是，`$dependencies`是通过反射的方式获取到的对象构造函数需要的参数值。由于参数值可能很多，因此这里是传递的数组。但是这个数组大家需要注意的是，每个数组中的元素，并不是简单的字符串类型的值，而是对象类型的值。那这个对象的类型是什么呢？
 
 首先需要追溯$dependencies是怎么产生的：
 
@@ -72,7 +72,7 @@ try {
     ... ...
 ```
 
-上面这段代码正是调用`resolveDependencies`方法前，`build`方法中的核心代码。可以看到，$dependencies是反射类的构造器通过调用`getParameters`方法获取到的值，继续追溯getConstructor方法：
+上面这段代码正是调用`resolveDependencies`方法前，`build`方法中的核心代码。可以看到，`$dependencies`是反射类的构造器通过调用`getParameters`方法获取到的值，继续追溯getConstructor方法：
 
 大家可以查看php的在线手册，在这个页面：https://www.php.net/manual/zh/class.reflectionclass.php，包含了ReflectionClass能调用的所有方法：
 
@@ -154,7 +154,7 @@ protected function resolvePrimitive(ReflectionParameter $parameter)
 }
 ```
 
-注意这个方法中参数$parameter的类型是：**ReflectionParameter**，我们在本节的前面已经给大家分析过怎样确定$parameter变量的的类型。
+注意这个方法中参数$parameter的类型是：**ReflectionParameter**，我们在本节的前面已经给大家分析过怎样确定`$parameter`变量的的类型。
 
 resolveClass：
 

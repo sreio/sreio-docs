@@ -157,7 +157,7 @@ public function dispatch(Route $route, $controller, $method)
 }
 ```
 
-到这里，我们最终发现，程序会去检测对应的controller类中是否包含`callAction`方法，是则直接执行controller类上的`callAction`方法，否则执行controller类上的`method`方法。回到调用`dispatch()`的语句中，我们会发现参数值$controller和$method是通过调用类中的`getController()`和`getControllerMethod()`方法得到的。
+到这里，我们最终发现，程序会去检测对应的controller类中是否包含`callAction`方法，是则直接执行controller类上的`callAction`方法，否则执行controller类上的`method`方法。回到调用`dispatch()`的语句中，我们会发现参数值`$controller`和`$method`是通过调用类中的`getController()`和`getControllerMethod()`方法得到的。
 
 接下来我们来看另一个方法`runCallable`：
 
