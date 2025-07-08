@@ -67,9 +67,9 @@ bind方法是Laravel实现绑定机制的核心方法之一，另外还有很多
 
 **参数**
 
-1) 首先明确第一个参数$abstract，简单说就是id，可以当作是存入容器中的名字，它可以使一个字符串，一个类甚至是一个接口。
+1) 首先明确第一个参数`$abstract`，简单说就是id，可以当作是存入容器中的名字，它可以使一个字符串，一个类甚至是一个接口。
 
-2) 第二个参数$concrete简单说就是真实的值，可以当作是一个真正存入容器的实体。他可以是一个实现类，实例或者一个闭包。
+2) 第二个参数`$concrete`简单说就是真实的值，可以当作是一个真正存入容器的实体。他可以是一个实现类，实例或者一个闭包。
 
 3) 第三个参数控制shared的值。
 
@@ -83,9 +83,9 @@ protected function dropStaleInstances($abstract)
 }
 ```
 
-2、然后判断第二个参数$concrete是不是空，如果是空，则将abstract变量值直接赋值给$concrete
+2、然后判断第二个参数`$concrete`是不是空，如果是空，则将abstract变量值直接赋值给`$concrete`
 
-3、判断$concrete是否是一个闭包，不是则调用getClosure，返回一个闭包便于后面操作
+3、判断`$concrete`是否是一个闭包，不是则调用getClosure，返回一个闭包便于后面操作
 
 我们看一下getClosure方法：
 
@@ -106,7 +106,7 @@ protected function getClosure($abstract, $concrete)
 
 大家可以很清楚地看到，这里再次调用了build和resolve方法，并且将解析出来的对象当作闭包函数的返回值。
 
-回到bind方法，上面 $concrete 得到一个闭包函数后，调用 compact 把 $concrete 和 $shard （第三个参数判断是否 shared）组成一个 key 分别为 concrete 和 shared 的数组，存入 binding 数组中，而 binding 数组的 key 是当前的抽象类：
+回到bind方法，上面 `$concrete` 得到一个闭包函数后，调用 compact 把 `$concrete` 和 `$shard` （第三个参数判断是否 shared）组成一个 key 分别为 concrete 和 shared 的数组，存入 binding 数组中，而 binding 数组的 key 是当前的抽象类：
 
 ```php
 $this->bindings[$abstract] = compact('concrete', 'shared');
@@ -130,11 +130,11 @@ if ($this->resolved($abstract))
 }
 ```
 
-如何判断当前的$abstract曾经被解析过，我们看下resolved函数，两个条件：
+如何判断当前的`$abstract`曾经被解析过，我们看下resolved函数，两个条件：
 
-1、当前的resolved数组中是否存在$abstract
+1、当前的resolved数组中是否存在`$abstract`
 
-2、instances数组中是否存在对应的值，注意：在bind方法的第一句`$this->dropStaleInstances($abstract);`，那时我们已经清空了instances对应的abstract值，因此这里$abstract实际是找到的$abstract的别名。对应resolved方法开始的这几条语句。
+2、instances数组中是否存在对应的值，注意：在bind方法的第一句`$this->dropStaleInstances($abstract);`，那时我们已经清空了instances对应的abstract值，因此这里`$abstract`实际是找到的`$abstract`的别名。对应resolved方法开始的这几条语句。
 
 ```php
 public function resolved($abstract)

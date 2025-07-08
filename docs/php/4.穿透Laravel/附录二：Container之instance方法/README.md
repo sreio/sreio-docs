@@ -98,13 +98,13 @@ protected function removeAbstractAlias($searched)
 
 测试发现，首页仍然能正常访问。
 
-上面两次中断测试，说明默认情况下，foreach循环体中的语句并不会被触发运行。这里我们能看到，这个方法的主要目的，就是检测abstractAliases成员变量中是否包含$searched这个键，如果包含则主动删除。
+上面两次中断测试，说明默认情况下，foreach循环体中的语句并不会被触发运行。这里我们能看到，这个方法的主要目的，就是检测abstractAliases成员变量中是否包含`$searched`这个键，如果包含则主动删除。
 
 instance方法中剩余的代码，做的工作可以简述如下：
 
-将$instance装填到容器的instances成员变量上，注意这个变量是一个数组，键值就是传递进来的$abstract。
+将`$instance`装填到容器的instances成员变量上，注意这个变量是一个数组，键值就是传递进来的`$abstract`。
 
-之后判断$abstract是否被绑定过，如果是，则执行绑定回调事件。
+之后判断`$abstract`是否被绑定过，如果是，则执行绑定回调事件。
 
 最后返回$instance变量
 

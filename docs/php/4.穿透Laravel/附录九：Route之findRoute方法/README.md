@@ -148,7 +148,7 @@ $response = $kernel->handle(
 
 接下来我们来看`findRoute`方法的内部代码：
 
-第一行`$this->current = $route = $this->routes->match($request);`，这里调用当前成员变量$routes身上的`match`方法，那么我们必然要去追踪$routes是什么：
+第一行`$this->current = $route = $this->routes->match($request);`，这里调用当前成员变量`$routes`身上的`match`方法，那么我们必然要去追踪`$routes`是什么：
 
 通过搜索：routes（在Router类文件中），我们在Router类的构造函数中找到下面的代码：
 
@@ -168,7 +168,7 @@ public function __construct(Dispatcher $events, Container $container = null)
 }
 ```
 
-这样我们就知道了，$routes是类RouteCollection的具体实例，那Router类又是什么时候创建的呢？
+这样我们就知道了，`$routes`是类RouteCollection的具体实例，那Router类又是什么时候创建的呢？
 
 请读者回到本节开头仔细浏览(1) ~ (6)这6个过程中的代码，可以发现在(5)中出现了`$this->router->dispatch($request)`语句。这样，我们就发现了，router其实是Kernel类的一个成员变量，继续向前追踪可以发现在(2)中，Router是作为构造函数的参数在类的创建过程中被保存到成员变量router上的。
 
@@ -240,9 +240,9 @@ public function getRoutes()
 }
 ```
 
-我们看到，这里直接是取allRoutes成员变量中的值(这里我们猜测$this->allRoutes也是一个键值型数组)。
+我们看到，这里直接是取allRoutes成员变量中的值(这里我们猜测`$this->allRoutes`也是一个键值型数组)。
 
-我们猜测，代码执行到这里时，$this->allRoutes和$this->routes一定是有值的，否则后面下面的`matchAgainstRoutes`方法如何能匹配
+我们猜测，代码执行到这里时，`$this->allRoutes`和`$this->routes`一定是有值的，否则后面下面的`matchAgainstRoutes`方法如何能匹配
 
 到路由呢？要验证这一点也很简单，我们对`RouteCollection`类的`match`方法，做简单的var_dump中断测试就可以了：
 
@@ -272,8 +272,8 @@ public function match(Request $request)
 
 现在问题来了：
 
-- 在我们分析代码的过程中，根本就没有对`RouteCollection`类中的成员变量$routes和$allRoutes做任何操作，它们的值是从哪来的呢？
-- 就算前面有对$routes和$allRoutes的操作，代码又是怎么做到这里获取到的值就是之前操作过的值呢？
+- 在我们分析代码的过程中，根本就没有对`RouteCollection`类中的成员变量`$routes`和`$allRoutes`做任何操作，它们的值是从哪来的呢？
+- 就算前面有对`$routes`和`$allRoutes`的操作，代码又是怎么做到这里获取到的值就是之前操作过的值呢？
 
 要弄清楚这个问题，我们必须先弄清楚路由类的工作原理和工作过程：
 
@@ -888,8 +888,8 @@ public function match(Request $request)
 
 现在我们就来回答之前提到的两个问题：
 
-1) $routes和$allRoutes值是从哪里来的？
-2) 如何保证在`findRoute`方法运行时，调用的RouteCollection类自身$routes值和$allRoutes值就是之前操作过程中得到的值？
+1) `$routes`和`$allRoutes`值是从哪里来的？
+2) 如何保证在`findRoute`方法运行时，调用的RouteCollection类自身`$routes`值和`$allRoutes`值就是之前操作过程中得到的值？
 
 关键点在下面这个方法：
 
@@ -909,7 +909,7 @@ protected function sendRequestThroughRouter($request)
 }
 ```
 
-这个方法是Kernel类(vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php)的一个方法，它是index.php在执行$kernel对象的handle方法时触发的：
+这个方法是Kernel类(vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php)的一个方法，它是index.php在执行$`kernel`对象的handle方法时触发的：
 
 ```php
 public function handle($request)
@@ -1116,7 +1116,7 @@ protected function loadRoutes($routes)
 }
 ```
 
-我们知道，此时传递进来的$routes参数值是一个路由文件的路径，并不是闭包，因此代码进入else分支，继续追踪`RouteFileRegistrar`类的`register`方法：
+我们知道，此时传递进来的`$routes`参数值是一个路由文件的路径，并不是闭包，因此代码进入else分支，继续追踪`RouteFileRegistrar`类的`register`方法：
 
 ```php
 /**
@@ -1193,9 +1193,9 @@ protected function addToCollections($route)
 }
 ```
 
-到这里，大家应该能很清楚地看到，路由加载过程中，$routes和$allRoutes变量值是怎样被赋值的了。
+到这里，大家应该能很清楚地看到，路由加载过程中，`$routes`和`$allRoutes`变量值是怎样被赋值的了。
 
-剩下的另一个问题是：如何保证在`findRoute`方法运行时，调用的RouteCollection类自身$routes值和$allRoutes值就是之前操作过程中得到的值？
+剩下的另一个问题是：如何保证在`findRoute`方法运行时，调用的RouteCollection类自身`$routes`值和`$allRoutes`值就是之前操作过程中得到的值？
 
 答案：Laravel通过操作一个单例Router来保证所有操作都在同一个Router对象上，既然是对同一个对象进行的操作，那这个对象的成员变量值自然在操作的各个阶段都能保持一致了。
 
@@ -1267,7 +1267,7 @@ protected function registerRouter()
 
 现在我们验证两个调用Router类的地方：
 
-1）Kernel类中的成员变量$router
+1）Kernel类中的成员变量`$router`
 
 2）自定义路由的路由文件中引用的`Route`类
 

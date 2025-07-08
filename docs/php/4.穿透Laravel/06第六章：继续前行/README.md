@@ -406,7 +406,7 @@ public function registerCoreContainerAliases()
 
 > vendor/laravel/framework/src/Illuminate/Foundation/Application.php
 
-这个方法的代码相对来说，是比较容易理解的，相当于是双重foreach循环。第一层循环，从数组中抽出单个的$key和$aliases。第二层循环，因为$aliases可能是多维数组，因此继续遍历$aliases数组，将其中的单个值和之前的$key组合为参数，传递给$alias方法。
+这个方法的代码相对来说，是比较容易理解的，相当于是双重foreach循环。第一层循环，从数组中抽出单个的`$key`和`$aliases`。第二层循环，因为`$aliases`可能是多维数组，因此继续遍历`$aliases`数组，将其中的单个值和之前的`$key`组合为参数，传递给`$alias`方法。
 
 我们重点关注一下alias方法：
 

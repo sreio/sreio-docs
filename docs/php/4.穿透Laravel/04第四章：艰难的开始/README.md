@@ -76,7 +76,7 @@ return $app;
 
 >bootstrap/app.php
 
-我们看到$app其实是类Application的一个实例，那么Application类又是怎样定义的呢？通过查看`vendor/laravel/framework/src/Illuminate/Foundation/Application.php`文件的源码，我们能了解到，Application类其实是负责整个应用调度的类，它起到了一个胶水的作用(将Laravel的各个组件粘贴在一起)。这一点，Laravel作者给出了明确的提示：
+我们看到`$app`其实是类Application的一个实例，那么Application类又是怎样定义的呢？通过查看`vendor/laravel/framework/src/Illuminate/Foundation/Application.php`文件的源码，我们能了解到，Application类其实是负责整个应用调度的类，它起到了一个胶水的作用(将Laravel的各个组件粘贴在一起)。这一点，Laravel作者给出了明确的提示：
 
 ```php
 <?php
@@ -207,7 +207,7 @@ public function instance($abstract, $instance)
 
 > vendor/laravel/framework/src/Illuminate/Container/Container.php
 
-在这一段代码中，我们把注意力集中到`this->instances[$abstract] = $instance;`这一行上，可以很清楚地看到，代码做的事情，就是简单地给类的成员变量instances(通过后面的操作可以看到该变量实际上是一个数组类型的变量)，添加一个健值对。其中键名是传入的参数$abstract的参数值，键值是另一个参数$instance的参数值。由此，我们可以很清楚地看到，bindPathsInContainer方法，完成了多个路径的"键值对绑定"工作。
+在这一段代码中，我们把注意力集中到`this->instances[$abstract] = $instance;`这一行上，可以很清楚地看到，代码做的事情，就是简单地给类的成员变量instances(通过后面的操作可以看到该变量实际上是一个数组类型的变量)，添加一个健值对。其中键名是传入的参数`$abstract`的参数值，键值是另一个参数`$instance`的参数值。由此，我们可以很清楚地看到，bindPathsInContainer方法，完成了多个路径的"键值对绑定"工作。
 
 > instance方法全部代码的详细解读，请参考【附录二】
 
@@ -278,7 +278,7 @@ public static function getInstance()
 
 >vendor/laravel/framework/src/Illuminate/Container/Container.php
 
-这里，我们看到一条比较生僻的php语句：`static::$instance = new static;`。其次，我们发现Container类的$instance变量设置成了静态变量，因此这是一个典型的单例实现(所有引用Container::getInstance()得到的实例，都指向同一个静态成员变量$instance)。
+这里，我们看到一条比较生僻的php语句：`static::$instance = new static;`。其次，我们发现Container类的`$instance`变量设置成了静态变量，因此这是一个典型的单例实现(所有引用Container::getInstance()得到的实例，都指向同一个静态成员变量`$instance`)。
 
 ## new static
 

@@ -122,7 +122,7 @@ protected function resolve($abstract, $parameters = [], $raiseEvents = true)
 	... ...
 ```
 
-很容易看出来，make方法调用resolve时，并没有指定$raiseEvents的参数值，因此可以认为make方法解析实例时，$raiseEvents值就是true。这样我们就能理解了，make解析实例时，一定会去执行Container的fireResolvingCallbacks方法。那这个方法做了什么呢？
+很容易看出来，make方法调用resolve时，并没有指定$raiseEvents的参数值，因此可以认为make方法解析实例时，`$raiseEvents`值就是true。这样我们就能理解了，make解析实例时，一定会去执行Container的fireResolvingCallbacks方法。那这个方法做了什么呢？
 
 ```php
 /**
@@ -251,7 +251,7 @@ protected function registerBaseServiceProviders()
 
 > 要正确完成CuponServiceProvider类的引入，还需在文件按头部添加命名空间
 
-我们看到页面输出了很多个"OK,"，这是因为在程序完成执行完`registerBaseServiceProvider`方法中的`$this->register(new CuponServiceProvider($this));`代码后，CuponServiceProvider类中的`boot`方法被调用，而这个方法正是完成了一次对全局回调事件($globalResolvingCallbacks)的操作，我们继续阅读容器类中的resolving方法源码：
+我们看到页面输出了很多个"OK,"，这是因为在程序完成执行完`registerBaseServiceProvider`方法中的`$this->register(new CuponServiceProvider($this));`代码后，CuponServiceProvider类中的`boot`方法被调用，而这个方法正是完成了一次对全局回调事件`($globalResolvingCallbacks)`的操作，我们继续阅读容器类中的resolving方法源码：
 
 ```php
 /**
@@ -287,7 +287,7 @@ if (is_null($callback) && $abstract instanceof Closure) {
 
 这正是因为，在完成`$this->register(new CuponServiceProvider($this));`这条语句之后，很多类的解析都是调用了`resolve`方法，并且调用`resolve`方法时，第三个参数$raiseEvents参数值是true。
 
-至此，我们知道了在laravel框架中添加全局解析回调事件，以及触发回调事件执行的详细过程。依此类推，Container对象上的其他事件($reboundCallbacks、$globalAfterResolvingCallbacks、$resolvingCallbacks、$afterResolvingCallbacks)用法也类似。只是调用的方式和调用的时机可能不同，读者可自行探索。
+至此，我们知道了在laravel框架中添加全局解析回调事件，以及触发回调事件执行的详细过程。依此类推，Container对象上的其他事件(`$reboundCallbacks`、`$globalAfterResolvingCallbacks`、`$resolvingCallbacks`、`$afterResolvingCallbacks`)用法也类似。只是调用的方式和调用的时机可能不同，读者可自行探索。
 
 回到resolve方法中，我们先来看第一行：
 
@@ -314,9 +314,9 @@ public function getAlias($abstract)
 }
 ```
 
-我们发现这里用了递归，代码试图去容器类保护成员变量aliases数组中查找$abstract键，如果没找到，直接返回$abstract。找到了，将值换成`$this->aliases[$abstract]`，请大家注意，`$this->aliases`数组中某个键的值(一般是一个字符串)很少会再成为$this->aliases的键名，即使有这种情况出现，也不会出现键名和键值相同的情况，因此这里的递归不会无限进行下去。
+我们发现这里用了递归，代码试图去容器类保护成员变量aliases数组中查找`$abstract`键，如果没找到，直接返回`$abstract`。找到了，将值换成`$this->aliases[$abstract]`，请大家注意，`$this->aliases`数组中某个键的值(一般是一个字符串)很少会再成为`$this->aliases`的键名，即使有这种情况出现，也不会出现键名和键值相同的情况，因此这里的递归不会无限进行下去。
 
-因此，这里程序优先去查看aliases数组中是否存在相应的键，如果不存在直接返回$abstract变量，否则返回的是alias数组相应键上的值。
+因此，这里程序优先去查看aliases数组中是否存在相应的键，如果不存在直接返回`$abstract`变量，否则返回的是alias数组相应键上的值。
 
 接着看下面的代码：
 
@@ -326,7 +326,7 @@ $needsContextualBuild = ! empty($parameters) || ! is_null(
 );
 ```
 
-接下来我们继续阅读这个方法后面的代码，可以得知，$needsContextualBuild是在判断根据当前的传参情况是否需要进行"上下文构建"。如何理解这个上下文构建呢？这就离不开Laravel的上下文绑定机制了。
+接下来我们继续阅读这个方法后面的代码，可以得知，`$needsContextualBuild`是在判断根据当前的传参情况是否需要进行"上下文构建"。如何理解这个上下文构建呢？这就离不开Laravel的上下文绑定机制了。
 
 什么是上下文呢？
 
@@ -384,7 +384,7 @@ function () {
    }
    ```
 
-   这个方法直接生成一个ContextualBindingBuilder对象，传入container对象和$concrete。$concrete在这个例子中就是`PhotoController::class`和`VideoController::class`
+   这个方法直接生成一个ContextualBindingBuilder对象，传入container对象和`$concrete`。`$concrete`在这个例子中就是`PhotoController::class`和`VideoController::class`
 
 2. ContextualBindingBuilder类
 
@@ -462,7 +462,7 @@ function () {
    
    ```
 
-   这个类主要提供两个方法，needs和give。needs方法就是简单把$abstract存储起来，然后返回当前对象，方便后面继续进行链式操作。give方法，重新调用$container的`addContextualBinding`方法，这个就是添加上下文绑定的方法，分别传入的下面三个参数：
+   这个类主要提供两个方法，needs和give。needs方法就是简单把`$abstract`存储起来，然后返回当前对象，方便后面继续进行链式操作。give方法，重新调用`$container`的`addContextualBinding`方法，这个就是添加上下文绑定的方法，分别传入的下面三个参数：
 
    concrete：PhotoController::class的别名(如果有的话)
 
@@ -578,9 +578,9 @@ protected function getConcrete($abstract)
 
 这个方法的主要思路是：
 
-- a) 看看上下文绑定数组中有没有$abstract对应的concrete值，如果有直接返回
-- b) 如果没有找到上下文绑定，就是一个普通绑定，就取bindings数组中看看有没有$abstract对应的concrete值，从而确认是不是以前有绑定过。
-- c) 都没有，说明没有绑定，直接返回$abstract
+- a) 看看上下文绑定数组中有没有`$abstract`对应的concrete值，如果有直接返回
+- b) 如果没有找到上下文绑定，就是一个普通绑定，就取bindings数组中看看有没有`$abstract`对应的concrete值，从而确认是不是以前有绑定过。
+- c) 都没有，说明没有绑定，直接返回`$abstract`
 
 接下来，获取解析对象：
 
@@ -601,13 +601,13 @@ protected function isBuildable($concrete, $abstract)
 }
 ```
 
-$concrete和$abstract恒等或者$concrete是一个闭包
+`$concrete`和`$abstract`恒等或者$concrete是一个闭包
 
 如果isBuildable返回true，执行build方法创建出这个object，build方法的处理是这样：
 
 1）如果concrete是闭包，直接执行闭包函数
 
-2）如果不是闭包，使用反射产生当前的$concrete类对象
+2）如果不是闭包，使用反射产生当前的`$concrete`类对象
 
 如果isBuildable返回false，调用make进入递归，make 再去 getConcrete 函数，去上下文绑定数组和 binding 数组，查询这个时候这个・类路径下・（就是 abstruct）有没有对应的闭包或类路径。但不管怎么样。最后下来要么闭包，要么相等，他都会进入 build 函数创建对象。
 

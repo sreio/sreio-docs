@@ -177,7 +177,7 @@ protected function runCallable()
 }
 ```
 
-可以看到，这里直接取出当前对象中的成员变量`action`的uses键值赋值给$callable，然后直接执行$callable方法。
+可以看到，这里直接取出当前对象中的成员变量`action`的uses键值赋值给`$callable`，然后直接执行`$callable`方法。
 
 这种情况正是因为在路由文件中，支持下面这种定义：
 

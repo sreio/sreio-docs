@@ -118,8 +118,8 @@ protected $bootstrappers = [
 
 这样，我们就明白了，传入`parseEventAndPayload`方法中的两个参数是这样的：
 
-- $event参数是一个字符串，具体内容是$bootstrappers数组中的元素值和"bootstrapping:  "或者"bootstrapped:  "拼接得到的(注意这里$boostrappers数组中元素值是往后拼接)
-- $payload参数是一个数组，数组中的内容就是容器对象本身
+- `$event`参数是一个字符串，具体内容是`$bootstrappers`数组中的元素值和"bootstrapping:  "或者"bootstrapped:  "拼接得到的(注意这里`$boostrappers`数组中元素值是往后拼接)
+- `$payload`参数是一个数组，数组中的内容就是容器对象本身
 
 接下来，我们继续看`parseEventAndPayload`方法的源码：
 
@@ -147,7 +147,7 @@ a) bootstrapping: \Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables
 
 b) bootstrapped: \Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables
 
-显然这两个字符串对应的类并不存在。经过`parseEventAndPayload`处理后，$event和$payload对应的值分别是一个字符串和一个数组。大家可以在`dispatch`方法中做中断测试：
+显然这两个字符串对应的类并不存在。经过`parseEventAndPayload`处理后，`$event`和`$payload`对应的值分别是一个字符串和一个数组。大家可以在`dispatch`方法中做中断测试：
 
 ```php
 public function dispatch($event, $payload = [], $halt = false)
@@ -180,7 +180,7 @@ if ($this->shouldBroadcast($payload)) {
 }
 ```
 
-这里，先判断$payload是否需要broadcast, 需要则调用`broadcastEvent`方法：
+这里，先判断`$payload`是否需要broadcast, 需要则调用`broadcastEvent`方法：
 
 shouldBroadcast方法：
 
@@ -242,7 +242,7 @@ foreach ($this->getListeners($event) as $listener) {
 return $halt ? null : $responses;
 ```
 
-这里简单描述就是：先从$event身上拿到所有的$listener，然后循环处理。如果传递的$halt值为true且$repsonse值不为null，则在第一次$listener执行之后就立刻返回。否则将执行结果保存为数组，最后一句，如果$halt值为true，返回值为null，否则返回$response数组。
+这里简单描述就是：先从`$event`身上拿到所有的`$listener`，然后循环处理。如果传递的`$halt`值为true且`$repsonse`值不为null，则在第一次`$listener`执行之后就立刻返回。否则将执行结果保存为数组，最后一句，如果`$halt`值为true，返回值为null，否则返回`$response`数组。
 
 接下来，我们重点分析`getListeners`方法：
 
@@ -268,7 +268,7 @@ public function getListeners($eventName)
 }
 ```
 
-这个方法中的第一行语句运行后，获取到$listeners值是什么呢？我们仍然使用【var_dump中断测试】的方法来看一下：
+这个方法中的第一行语句运行后，获取到`$listeners`值是什么呢？我们仍然使用【var_dump中断测试】的方法来看一下：
 
 ```php
 public function getListeners($eventName)
@@ -284,7 +284,7 @@ public function getListeners($eventName)
 array(0) { }
 ```
 
-这里为了更加清楚地知道$eventName的值，我们打印一下$eventName看看：
+这里为了更加清楚地知道`$eventName`的值，我们打印一下`$eventName`看看：
 
 ```php
 public function getListeners($eventName)
@@ -371,7 +371,7 @@ class EventServiceProvider extends ServiceProvider
 }
 ```
 
-请大家注意，我们在$listen数组中添加了一个事件PostSaved，同时定义了这个事件的监听动作为SaveDataToCache。
+请大家注意，我们在`$listen`数组中添加了一个事件PostSaved，同时定义了这个事件的监听动作为SaveDataToCache。
 
 2）修改完EventServiceProvider.php文件后，打开命令行，输入如下命令：
 
@@ -535,7 +535,7 @@ array(1) {[0]=> object(Closure)#130 (3) { ["static"] => array(2) { ["listener"] 
 
 读者如果真的按照上面的步骤操作下来，不出意外的话，这个页面会一直处于加载的状态直到停止响应。这当然是因为我们打印的这个对象虽然是一个闭包，但是闭包中包含的了很多次容器对象的递归引用。这一点我们在前面【继续前行】这一节中已经给大家讲阐述过了。
 
-至此，我们发现：在执行`dispatch`方法之前，$listeners成员变量身上，已经包含了我们注册的这个事件的相关"绑定"。其中键名就是"App\Events\PostSaved"，键值是一个闭包。新的问题出现了，这个"绑定"是在什么时候执行的呢？
+至此，我们发现：在执行`dispatch`方法之前，`$listeners`成员变量身上，已经包含了我们注册的这个事件的相关"绑定"。其中键名就是"App\Events\PostSaved"，键值是一个闭包。新的问题出现了，这个"绑定"是在什么时候执行的呢？
 
 要了解这一点，请大家回到【处理请求】这一节中，在"6个类各自执行自己bootstrap方法的阶段"，第6个类BootProviders的bootstrap方法调用了容器的自身的boot方法，而这个方法体中，正好包含了provider类的处理：
 
@@ -698,6 +698,6 @@ public function createClassListener($listener, $wildcard = false)
 
 1) Dispatcher类的dispatch方法，是触发Laravel框架中事件执行的核心方法。
 
-2) Laravel框架在启动阶段，会调用各个ServiceProvider类身上的boot方法，这个阶段完成事件的绑定(将事件转换成闭包绑定到相应事件名称的键值型数组$listeners中)
+2) Laravel框架在启动阶段，会调用各个ServiceProvider类身上的boot方法，这个阶段完成事件的绑定(将事件转换成闭包绑定到相应事件名称的键值型数组`$listeners`中)
 
 3) 除了框架自定义的几个事件是通过bootstrapWith方法触发执行的，其他用户自定义的事件，需要用户主动调用event函数才能进行触发。

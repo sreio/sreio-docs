@@ -96,7 +96,7 @@ public function getProviders($provider)
 
 这里分两步：
 
-- a) 如果参数$provider是字符串，直接赋值给变量$name，如果不是，使用get_class获取该参数$provider所属类的路径，返回
+- a) 如果参数`$provider`是字符串，直接赋值给变量`$name`，如果不是，使用get_class获取该参数`$provider`所属类的路径，返回
 
 - b) 调用工具类Arr的where方法
 
@@ -107,7 +107,7 @@ public static function where($array, callable $callback)
 }
 ```
 
-这里简单解释就是去$this->serviceProviders中找匹配$name值的项，以数组形式返回。
+这里简单解释就是去`$this->serviceProviders`中找匹配`$name`值的项，以数组形式返回。
 
 继续看后面的代码：
 
@@ -128,7 +128,7 @@ public function resolveProvider($provider)
 
 很简单，直接new一个provider对象并返回。
 
-这里我们需要注意new对象同时，传入了$this变量值作为参数。我们猜测，这个$this一定会在类的构造函数中使用到，于是我们去找一个具体的provider类型的类，比如RoutingServiceProvider，看看情况是不是这样。
+这里我们需要注意new对象同时，传入了`$this`变量值作为参数。我们猜测，这个`$this`一定会在类的构造函数中使用到，于是我们去找一个具体的provider类型的类，比如RoutingServiceProvider，看看情况是不是这样。
 
 然而通过查看RoutingServiceProvider类的源码，我们并没有找到这个类的构造行数__contruct()，既然这样我们只能"向上"继续查找，注意到RoutingServiceProvider类继承了父类ServiceProvider，我们直接跳转到ServiceProvider，终于在这个类中看到了它的构造函数：
 
@@ -184,7 +184,7 @@ if (property_exists($provider, 'singletons')) {
 }
 ```
 
-这里，我们能分析出来，代码是在检测上一步实例化出来的类(赋值给$provider)中是否包含bindings和singletons成员，如果有包含，就将bindings和singletons成员中的包含的内容解析出来，调用Application类的bind和singleton方法。
+这里，我们能分析出来，代码是在检测上一步实例化出来的类(赋值给`$provider`)中是否包含bindings和singletons成员，如果有包含，就将bindings和singletons成员中的包含的内容解析出来，调用Application类的bind和singleton方法。
 
 然而Application类本身并没有bind和singleton方法，那这两个方法在哪呢？
 
@@ -232,7 +232,7 @@ protected function bootProvider(ServiceProvider $provider)
 
 这个强制执行provider对象身上boot方法的规则，大家可以理解为它就是Laravel处理ServiceProvider类的方式。实际上框架提供的文档中，也会对此有明确的说明。
 
-除了在容器主动执行`register`方法时会触发执行$provider身上定义的boot方法外，在应用启动阶段也会遍历容器定义的所有serviceProviders，然后触发执行这些类身上的bootProvider方法，关于这一点，大家可以在Application类中的boot方法中，找到相同功能的代码：
+除了在容器主动执行`register`方法时会触发执行`$provider`身上定义的boot方法外，在应用启动阶段也会遍历容器定义的所有serviceProviders，然后触发执行这些类身上的bootProvider方法，关于这一点，大家可以在Application类中的boot方法中，找到相同功能的代码：
 
 ```php
 public function boot()
@@ -245,5 +245,5 @@ public function boot()
 }
 ```
 
-最后一句很好理解，直接返回$provider对象。
+最后一句很好理解，直接返回`$provider`对象。
 

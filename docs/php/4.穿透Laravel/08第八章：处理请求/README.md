@@ -91,7 +91,7 @@ public static function enableHttpMethodParameterOverride()
 
 > vendor/symfony/http-foundation/Request.php
 
-这里，我们简单介绍一下httpMethodParameterOverride这个变量的作用：当设置$httpMethodParameterOverride参数值为true时，使用表单进行POST提交http请求时，可以通过设置表单_method参数值来向服务器发送PUT或者DELETE请求。即Laravel可以将POST请求转换为PUT或者DELETE请求，前提是必须设置$httpMethodParameterOverride参数值为true。
+这里，我们简单介绍一下httpMethodParameterOverride这个变量的作用：当设置`$httpMethodParameterOverride`参数值为true时，使用表单进行POST提交http请求时，可以通过设置表单_method参数值来向服务器发送PUT或者DELETE请求。即Laravel可以将POST请求转换为PUT或者DELETE请求，前提是必须设置`$httpMethodParameterOverride`参数值为true。
 
 接下来继续看后面这行代码：
 
@@ -127,7 +127,7 @@ protected function sendRequestThroughRouter($request)
 
 到这里，框架在做了大量的前期准备工作之后，终于进入了正式的"启动"阶段。
 
-首先框架调用自身的instance方法，做了一次键值对绑定，同时清除保存在$resolvedInstance数组中的request键值对。
+首先框架调用自身的instance方法，做了一次键值对绑定，同时清除保存在`$resolvedInstance`数组中的request键值对。
 
 接下来，执行了一个非常重要的方法bootstrap：
 
@@ -172,7 +172,7 @@ public function bootstrapWith(array $bootstrappers)
 
 > vendor/laravel/framework/src/Illuminate/Foundation/Application.php
 
-到这里，我们不得不去弄清楚$bootstrappers数组中包含了哪些内容，在文件vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php中，我们能看到这个变量的初始化代码：
+到这里，我们不得不去弄清楚`$bootstrappers`数组中包含了哪些内容，在文件vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php中，我们能看到这个变量的初始化代码：
 
 ````php
 /**
@@ -194,7 +194,7 @@ protected $bootstrappers = [
 
 结合上面的循环语句，我们来仔细分析一下bootstrapWith方法中究竟发生了什么：
 
-首先我们要弄清楚$this['events']中是什么内容，一个比较简单的方法是回到bootstrapWith方法中直接进行var_dump中断测试：
+首先我们要弄清楚`$this['events']`中是什么内容，一个比较简单的方法是回到bootstrapWith方法中直接进行var_dump中断测试：
 
 ````php
 /**
@@ -226,7 +226,7 @@ public function bootstrapWith(array $bootstrappers)
 
 【图8.1】
 
-我们看到$this['events']实际上就是\Illmuinate\Events\Dispatcher类，那么框架是在哪一步将"events"这个键绑定上去的呢？
+我们看到`$this['events']`实际上就是\Illmuinate\Events\Dispatcher类，那么框架是在哪一步将"events"这个键绑定上去的呢？
 
 请读者回到第六章，在registerBaseServiceProviders这个方法中：
 
@@ -250,7 +250,7 @@ protected function registerBaseServiceProviders()
 
 为了弄清楚事情的真相，我们还是得借助var_dump中断测试这个万能的方法。
 
-首先，我们要确定events键值对是不是真的在`$this->register(new EventServiceProvider($this));`语句执行后才存在于app容器身上。怎么测试呢？很简单，在registerBaseServiceProviders方法中，注释`$this->register(new EventServiceProvider($this));`这一行。同时，在bootstrapWith方法中仍然打印$this['events']，并exit：
+首先，我们要确定events键值对是不是真的在`$this->register(new EventServiceProvider($this));`语句执行后才存在于app容器身上。怎么测试呢？很简单，在registerBaseServiceProviders方法中，注释`$this->register(new EventServiceProvider($this));`这一行。同时，在bootstrapWith方法中仍然打印`$this['events']`，并exit：
 
 ![](../images/test_07.png)
 
@@ -264,11 +264,11 @@ protected function registerBaseServiceProviders()
 
 【图8.3】
 
-而build方法通常都是由app容器的make方法调用之后触发调用的。难道$this['events']这种表达式能触发容器的make方法吗？
+而build方法通常都是由app容器的make方法调用之后触发调用的。难道`$this['events']`这种表达式能触发容器的make方法吗？
 
 重新回到Container类自身，通过仔细查看Container类的源码，我们发现，这个类继承了ArrayAccess这个接口！如果读者对php中的SPL这部分内容足够熟悉的话，应该很快能意识到，答案就在于此。
 
-当书写$this['events']这个表达式时，实际上是调用了Container类内部的offsetGet方法，这个方法正好引用了make方法：
+当书写`$this['events']`这个表达式时，实际上是调用了Container类内部的offsetGet方法，这个方法正好引用了make方法：
 
 ```php
 /**
@@ -342,7 +342,7 @@ public function afterBootstrapping($bootstrapper, Closure $callback)
 
 > vendor/laravel/framework/src/Illuminate/Foundation/Application.php
 
-通过上面这两个方法的源码我们可以看到，通过调用`beforeBootstrapping`和`afterBootstrapping`这两个方法，可以给$bootstrapper这个关键字拼接一个启动中(bootstrapping: )和启动后(bootstrapped: )的固定字符串，将拼接到的字符串作为关键字存储到events对象的listeners数组中，数组的键就是这个关键字，值就是传递进来的$callback。
+通过上面这两个方法的源码我们可以看到，通过调用`beforeBootstrapping`和`afterBootstrapping`这两个方法，可以给`$bootstrapper`这个关键字拼接一个启动中(bootstrapping: )和启动后(bootstrapped: )的固定字符串，将拼接到的字符串作为关键字存储到events对象的listeners数组中，数组的键就是这个关键字，值就是传递进来的`$callback`。
 
 大家可以在Dispatcher类的`listen`方法中找到这部分实现：
 
@@ -397,7 +397,7 @@ protected function bootstrappers()
 
 > vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
 
-我们最终能看到框架自定义的成员变量$bootstrappers值：
+我们最终能看到框架自定义的成员变量`$bootstrappers`值：
 
 ```php
 /**
@@ -987,7 +987,7 @@ public function then(Closure $destination)
 
 > vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
 
-我们知道$this->passable实际上就是request对象，then里面传入的参数是下面这条语句得到的：
+我们知道`$this->passable`实际上就是request对象，then里面传入的参数是下面这条语句得到的：
 
 ```php
 $this->dispatchToRouter()
@@ -1100,7 +1100,7 @@ protected function runRoute(Request $request, Route $route)
 
 > vendor/laravel/framework/src/Illuminate/Routing/Router.php
 
-前面我们已经讲过，$this->events实际上就是Dispatcher类，这里我们可以暂时忽略dispatch方法中发生的事情，为什么呢？因为通过在dispatch方法中做var_dump中断测试，我们能看到dispatch中并没有任何广播和订阅事件发生：
+前面我们已经讲过，`$this->events`实际上就是Dispatcher类，这里我们可以暂时忽略dispatch方法中发生的事情，为什么呢？因为通过在dispatch方法中做var_dump中断测试，我们能看到dispatch中并没有任何广播和订阅事件发生：
 
 ```php
  /**
@@ -1286,6 +1286,6 @@ protected function runCallable()
 
 > vendor/laravel/framework/src/Illuminate/Routing/Route.php
 
-这里通过对$callable这个变量做var_dump中断测试，能看到`$this->action['uses']`中保存的实际上是一个闭包。因此这个方法的语句简单解释，就是直接取执行绑定在action成员数组中的uses这个键上的闭包函数，详细分析请参考【附录十】。
+这里通过对`$callable`这个变量做var_dump中断测试，能看到`$this->action['uses']`中保存的实际上是一个闭包。因此这个方法的语句简单解释，就是直接取执行绑定在action成员数组中的uses这个键上的闭包函数，详细分析请参考【附录十】。
 
 本章完。

@@ -592,7 +592,7 @@ protected function getClosure($abstract, $concrete)
 
 > vendor/laravel/framework/src/Illuminate/Container/Container.php
 
-getClosure方法中代码逻辑可以简单理解为：根据参数$abstract和$concrete的值，分为两种情况去处理：
+getClosure方法中代码逻辑可以简单理解为：根据参数`$abstract`和`$concrete的值`，分为两种情况去处理：
 
 - 一种是调用build方法，这个方法中的代码可能用到反射去反向构建类。
 - 另一种是调用resolve方法，直接从container中解析出相应的类。
