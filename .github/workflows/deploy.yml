@@ -38,6 +38,12 @@ jobs:
       - name: Build VuePress site
         run: npm run docs:build
 
+      # ⚡ 新增：将 main 分支的 CNAME 复制到输出目录
+      - name: Copy CNAME to build dir
+        run: |
+          cp CNAME docs/.vuepress/dist/CNAME
+          echo "✅ CNAME copied: $(cat docs/.vuepress/dist/CNAME)"
+
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
