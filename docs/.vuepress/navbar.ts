@@ -44,6 +44,7 @@ export default defineNavbarConfig([
         { text: 'IT名词介绍', icon: 'logos:internetexplorer', link: '/it/'},
         { text: 'VPN', icon: 'streamline-plump-color:ladder', link: '/vpn/'},
         { text: '驾照考试', icon: 'streamline-ultimate-color:adventure-car-truck-1', link: '/驾照考试/'},
+        { text: '中国程序员容易发音错误的单词', icon: 'tdesign:user-talk-1', link: '/cpwp/'},
     ]
   },
   {  text: '网站导航', icon: 'icon-park:other', link: '/sites/'},
