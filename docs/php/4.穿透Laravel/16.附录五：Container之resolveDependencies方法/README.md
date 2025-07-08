@@ -154,7 +154,7 @@ protected function resolvePrimitive(ReflectionParameter $parameter)
 }
 ```
 
-注意这个方法中参数$parameter的类型是：**ReflectionParameter**，我们在本节的前面已经给大家分析过怎样确定`$parameter`变量的的类型。
+注意这个方法中参数`$parameter`的类型是：**ReflectionParameter**，我们在本节的前面已经给大家分析过怎样确定`$parameter`变量的的类型。
 
 resolveClass：
 
