@@ -33,6 +33,12 @@ const golangStudy = defineNoteConfig({
   sidebar: 'auto'
 })
 
+const phpConfig = defineNoteConfig({
+  dir: '/php/',
+  link: '/php/',
+  sidebar: 'auto',
+})
+
 const aiConfig = defineNoteConfig({
   dir: '/ai/',
   link: '/ai/',
@@ -136,6 +142,7 @@ export default defineNotesConfig({
   link: '/',
   notes: [
     golangStudy, 
+    phpConfig,
     aiConfig, 
     brainConfig,
     itConfig,
