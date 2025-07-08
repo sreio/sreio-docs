@@ -16,7 +16,7 @@ permalink: /golang/d4ma3bjl/
 
 
 ## 安装
-```terminal
+```shell
 go get github.com/redis/go-redis/v9
 ```
 
