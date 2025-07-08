@@ -22,6 +22,14 @@ export default defineUserConfig({
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
+    [
+      'script',
+      {
+        async: true,
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6715279698150024',
+        crossorigin: 'anonymous'
+      }
+    ]
   ],
 
   bundler: viteBundler(),
