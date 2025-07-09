@@ -11,6 +11,8 @@ permalink: /sites-collect/
   <LinkCard title="md2pdf" icon="catppuccin:markdown" href="https://md2pdf.sreio.com" />
   <LinkCard title="pdf2md" icon="material-icon-theme:pdf" href="https://pdf2md.morethan.io" />
   <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sub.srrio.cc" />
+  <LinkCard title="IT Tools" icon="streamline-stickies-color:lab-tools" href="https://it-tools.tech" />
+  
 </CardGrid>
 
 ## 探索
