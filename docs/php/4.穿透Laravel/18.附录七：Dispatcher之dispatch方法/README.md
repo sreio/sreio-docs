@@ -1,5 +1,5 @@
 ---
-title: README
+title: 附录七：Dispatcher之dispatch方法
 createTime: 2025/07/08 10:34:23
 permalink: /php/zmgms9g7/
 ---

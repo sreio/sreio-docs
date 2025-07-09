@@ -1,5 +1,5 @@
 ---
-title: README
+title: 附录八：扩展自动注册
 createTime: 2025/07/08 10:34:23
 permalink: /php/6x0nftgm/
 ---

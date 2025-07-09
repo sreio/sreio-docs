@@ -1,5 +1,5 @@
 ---
-title: README
+title: 附录四：Container之bind方法
 createTime: 2025/07/08 10:34:24
 permalink: /php/kwjk0ky3/
 ---

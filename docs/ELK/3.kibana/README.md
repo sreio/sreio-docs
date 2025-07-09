@@ -1,5 +1,5 @@
 ---
-title: README
+title: Kibana
 createTime: 2025/07/07 18:13:03
 permalink: /ELK/15w5sdo3/
 ---

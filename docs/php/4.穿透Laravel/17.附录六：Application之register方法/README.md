@@ -1,5 +1,5 @@
 ---
-title: README
+title: 附录六：Application之register方法
 createTime: 2025/07/08 10:34:23
 permalink: /php/5hnttfrz/
 ---
