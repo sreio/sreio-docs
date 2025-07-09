@@ -10,9 +10,9 @@ permalink: /sites-collect/
   <LinkCard title="Json在线解析" icon="material-icon-theme:json" href="https://json.sreio.com" />
   <LinkCard title="md2pdf" icon="catppuccin:markdown" href="https://md2pdf.sreio.com" />
   <LinkCard title="pdf2md" icon="material-icon-theme:pdf" href="https://pdf2md.morethan.io" />
-  <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sub.srrio.cc" />
   <LinkCard title="IT Tools" icon="streamline-stickies-color:lab-tools" href="https://it-tools.tech" />
-  
+  <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sub.srrio.cc" />
+  <LinkCard title="VPN测速" icon="line-md:speed-loop" href="https://nodequality.com" />
 </CardGrid>
 
 ## 探索
