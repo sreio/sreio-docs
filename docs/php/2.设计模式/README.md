@@ -3,8 +3,8 @@ title: 设计模式
 createTime: 2025/07/08 10:32:26
 permalink: /php/jzlo1nty/
 ---
-?> 设计模式有六大原则，这些原则是经过代码大神们不断总结的规律，目的是提高代码的复用性，降低耦合。
-
+::: tip 设计模式有六大原则，这些原则是经过代码大神们不断总结的规律，目的是提高代码的复用性，降低耦合。
+::: 
 > 开闭原则
 
 1988年，勃兰特·梅耶（Bertrand Meyer）在他的著作《面向对象软件构造（Object Oriented Software Construction）》中提出了开闭原则（Open Close Principle），它的原文是这样：“Software entities should be open for extension,but closed for modification”。
@@ -54,7 +54,8 @@ permalink: /php/jzlo1nty/
 ---
 
 
-!> 高内聚低耦合
+::: tip 高内聚低耦合
+::: 
 
 * 内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系；
 * 耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂程度、进入或访问一个模块的点以及通过接口的数据。

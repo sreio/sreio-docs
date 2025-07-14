@@ -4,8 +4,8 @@ createTime: 2025/07/07 18:13:03
 permalink: /ELK/
 ---
 
-?> `ELK`是`Elasticsearch`、`Logstash`、`Kibana`的简称，这三者是核心套件实现`日志采集`、`分析`、`展示`，但并非全部。
-
+::: tip `ELK`是`Elasticsearch`、`Logstash`、`Kibana`的简称，这三者是核心套件实现`日志采集`、`分析`、`展示`，但并非全部。
+:::
 
 
 - `Elasticsearch`是`实时全文搜索和分析引擎，提供搜集、分析、存储数据三大功能`；是一套开放REST和JAVA API等结构提供高效搜索功能，可扩展的分布式系统。它构建于Apache Lucene搜索引擎库之上。
