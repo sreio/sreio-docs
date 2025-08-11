@@ -15,6 +15,7 @@ permalink: /sites-collect/
   <LinkCard title="图片压缩工具" icon="catppuccin:image" href="https://tinypng.com/" />
   <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sub.srrio.cc" />
   <LinkCard title="VPN测速" icon="line-md:speed-loop" href="https://nodequality.com" />
+  <LinkCard title="ckeyRun" icon="vscode-icons:file-type-appscript" href="https://ckey.run/" />
 </CardGrid>
 
 ## 探索
@@ -23,6 +24,8 @@ permalink: /sites-collect/
   <LinkCard title="theme-plume主题" icon="icon-park:theme" href="https://theme-plume.vuejs.press/guide/intro/" />
   <LinkCard title="Emoji大全" icon="icon-park:message-emoji" href="https://emoji6.com/emojiall/" />
   <LinkCard title="iconify" icon="line-md:iconify1" href="https://icon-sets.iconify.design/" />
+  <LinkCard title="Emoji表情站" icon="icon-park:game-emoji" href="https://emojicombo.net/zh" />
+  <LinkCard title="免费在线拼图工具" icon="streamline-color:edit-image-photo-flat" href="https://img.ops-coffee.cn/photo/" />
 </CardGrid>
 
 
