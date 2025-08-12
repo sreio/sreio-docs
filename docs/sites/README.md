@@ -13,7 +13,6 @@ permalink: /sites-collect/
   <LinkCard title="IT Tools" icon="streamline-stickies-color:lab-tools" href="https://it-tools.tech" />
   <LinkCard title="curl命令转换工具" icon="logos:curl" href="https://curlconverter.com" />
   <LinkCard title="图片压缩工具" icon="catppuccin:image" href="https://tinypng.com/" />
-  <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sub.srrio.cc" />
   <LinkCard title="VPN测速" icon="line-md:speed-loop" href="https://nodequality.com" />
   <LinkCard title="ckeyRun" icon="vscode-icons:file-type-appscript" href="https://ckey.run/" />
 </CardGrid>
@@ -26,6 +25,7 @@ permalink: /sites-collect/
   <LinkCard title="iconify" icon="line-md:iconify1" href="https://icon-sets.iconify.design/" />
   <LinkCard title="Emoji表情站" icon="icon-park:game-emoji" href="https://emojicombo.net/zh" />
   <LinkCard title="免费在线拼图工具" icon="streamline-color:edit-image-photo-flat" href="https://img.ops-coffee.cn/photo/" />
+  <LinkCard title="starHistory" icon="openmoji:star" href="https://www.star-history.com/" />
 </CardGrid>
 
 
