@@ -15,6 +15,15 @@ permalink: /sites-collect/
   <LinkCard title="图片压缩工具" icon="catppuccin:image" href="https://tinypng.com/" />
   <LinkCard title="VPN测速" icon="line-md:speed-loop" href="https://nodequality.com" />
   <LinkCard title="ckeyRun" icon="vscode-icons:file-type-appscript" href="https://ckey.run/" />
+  <LinkCard title="在线文生图" icon="token-branded:imgnai" href="https://text2img.srrio.cc/" />
+  <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sublink.srrio.cc/" />
+</CardGrid>
+
+
+## 观影
+
+<CardGrid>
+  <LinkCard title="TV" icon="icon-park:tv-one" href="https://tv.srrio.cc/" />
 </CardGrid>
 
 ## 探索
@@ -34,4 +43,12 @@ permalink: /sites-collect/
 <CardGrid>
   <LinkCard title="俄罗斯方块" icon="streamline-freehand-color:video-game-tetris" href="https://binaryify.github.io/vue-tetris/?lan=zh" />
   <LinkCard title="烟花" icon="streamline-ultimate-color:fireworks-stick" href="https://bytesfly.github.io/blog/pages/fireworks.html" />
+</CardGrid>
+
+## 其他
+
+<CardGrid>
+  <LinkCard title="status" icon="streamline-kameleon-color:servers" href="https://status.srrio.cc/" />
+  <LinkCard title="爪云" icon="streamline-kameleon-color:servers" href="https://console.run.claw.cloud/" />
+  <LinkCard title="upstash" icon="devicon:redis" href="https://console.upstash.com/" />
 </CardGrid>
