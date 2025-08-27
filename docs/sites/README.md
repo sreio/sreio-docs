@@ -19,11 +19,36 @@ permalink: /sites-collect/
   <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sublink.srrio.cc/" />
 </CardGrid>
 
-
 ## 观影
 
 <CardGrid>
+  <LinkCard title="火车太堵" icon="icon-park:movie" href="https://www.tdgo.shop/" />
+  <LinkCard title="长资源" icon="icon-park:movie" href="https://www.cz233.com/" />
+  <LinkCard title="4K影视" icon="icon-park:movie" href="https://www.4kvm.tv/" />
+  <LinkCard title="海纳TV" icon="icon-park:movie" href="https://www.hainatv.net/" />
+  <LinkCard title="爱电影" icon="icon-park:movie" href="https://kuhh4jo.com/" />
+  <LinkCard title="爱看影视" icon="icon-park:movie" href="https://kuhh4jo.com/" />
+  <LinkCard title="金牌影院" icon="icon-park:movie" href="https://www.hskjjglo.com/" />
+  <LinkCard title="独播库" icon="icon-park:movie" href="https://www.dbkk.cc/" />
+  <LinkCard title="爱壹帆" icon="icon-park:movie" href="https://www.iyf.lv/" />
+  <LinkCard title="欧乐影院" icon="icon-park:movie" href="https://www.olehdtv.com/" />
+  <LinkCard title="黑夜影视" icon="icon-park:movie" href="https://darkvod.cc/" />
+  <LinkCard title="真狼影视" icon="icon-park:movie" href="https://www.zhenlang.cc/" />
   <LinkCard title="TV" icon="icon-park:tv-one" href="https://tv.srrio.cc/" />
+</CardGrid>
+
+## 动漫
+
+<CardGrid>
+  <LinkCard title="樱花动漫" icon="icon-park:tv-one" href="https://yhdm6.top/" />
+  <LinkCard title="二矿动漫[含广告]" icon="icon-park:tv-one" href="https://www.2rk.cc/" />
+  <LinkCard title="Omofun动漫" icon="icon-park:tv-one" href="https://cn.211dm.com/" />
+  <LinkCard title="异世界动漫" icon="icon-park:tv-one" href="https://www.dmmiku.net/" />
+  <LinkCard title="番薯动漫" icon="icon-park:tv-one" href="https://www.fsdm02.com/" />
+  <LinkCard title="girigiri爱动漫" icon="icon-park:tv-one" href="https://anime.girigirilove.icu/" />
+  <LinkCard title="AGE动漫" icon="icon-park:tv-one" href="https://www.agedm.vip/" />
+  <LinkCard title="动漫巴士" icon="icon-park:tv-one" href="https://dm84.net/" />
+  <LinkCard title="233动漫" icon="icon-park:tv-one" href="https://www.233dm.com/" />
 </CardGrid>
 
 ## 探索
