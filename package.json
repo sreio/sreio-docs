@@ -24,6 +24,7 @@
     "vuepress-theme-plume": "1.0.0-rc.155"
   },
   "dependencies": {
-    "axios": "^1.10.0"
+    "axios": "^1.10.0",
+    "mermaid": "^11.12.1"
   }
 }
