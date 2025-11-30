@@ -10,8 +10,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, onMounted, watch } from 'vue';
+<script lang="ts" setup>
+import { ref, onMounted, watch } from 'vue';
 import axios, { AxiosResponse, AxiosError } from 'axios';
 
 interface HitokotoResponse {
@@ -24,42 +24,43 @@ interface HitokotoResponse {
   [key: string]: any;
 }
 
-export default defineComponent({
-  name: 'HitokotoSentence',
-  props: {
-    apiUrl: { type: String, default: 'https://v1.hitokoto.cn' },
-    params: { type: Object as () => Record<string, string | number | Array<string>>, default: () => ({}) },
-    showDetail: { type: Boolean, default: true }
-  },
-  setup(props) {
-    const hitokoto = ref<HitokotoResponse>({ hitokoto: '', from: '', from_who: '' });
-    const hitokotoText = ref<string>('');
-    const DEFAULT_TEXT = '时光不染，回忆不淡°';
+interface Props {
+  apiUrl?: string;
+  params?: Record<string, string | number | Array<string>>;
+  showDetail?: boolean;
+}
 
-    const fetchData = async () => {
-      try {
-        const response: AxiosResponse<HitokotoResponse> = await axios.get(props.apiUrl, {
-          params: props.params,
-          timeout: 1000
-        });
-        hitokoto.value = response.data;
-        hitokotoText.value = response.data.hitokoto;
-      } catch (error) {
-        if (axios.isAxiosError(error) && (error.code === 'ECONNABORTED' || error.message.includes('timeout'))) {
-          hitokoto.value = { hitokoto: DEFAULT_TEXT, from: '', from_who: '' };
-          hitokotoText.value = DEFAULT_TEXT;
-        } else {
-          console.error('Failed to fetch Hitokoto:', error);
-        }
-      }
-    };
-
-    onMounted(fetchData);
-    watch(() => props.params, fetchData, { deep: true });
-
-    return { hitokoto, hitokotoText, showDetail: props.showDetail };
-  }
+const props = withDefaults(defineProps<Props>(), {
+  apiUrl: 'https://v1.hitokoto.cn',
+  params: () => ({}),
+  showDetail: true
 });
+
+const hitokoto = ref<HitokotoResponse>({ hitokoto: '', from: '', from_who: '' });
+const hitokotoText = ref<string>('');
+const DEFAULT_TEXT = '时光不染,回忆不淡°';
+
+const fetchData = async () => {
+  try {
+    const response: AxiosResponse<HitokotoResponse> = await axios.get(props.apiUrl, {
+      params: props.params,
+      timeout: 1000
+    });
+    hitokoto.value = response.data;
+    hitokotoText.value = response.data.hitokoto;
+  } catch (error) {
+    if (axios.isAxiosError(error) && (error.code === 'ECONNABORTED' || error.message.includes('timeout'))) {
+      hitokoto.value = { hitokoto: DEFAULT_TEXT, from: '', from_who: '' };
+      hitokotoText.value = DEFAULT_TEXT;
+    } else {
+      console.error('Failed to fetch Hitokoto:', error);
+    }
+  }
+};
+
+onMounted(fetchData);
+watch(() => props.params, fetchData, { deep: true });
+
 </script>
 
 <style scoped>

@@ -141,9 +141,9 @@ export default defineNotesConfig({
   dir: '/',
   link: '/',
   notes: [
-    golangStudy, 
+    golangStudy,
     phpConfig,
-    aiConfig, 
+    aiConfig,
     brainConfig,
     itConfig,
     networkConfig,
