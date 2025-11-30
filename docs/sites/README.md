@@ -17,6 +17,7 @@ permalink: /sites-collect/
   <LinkCard title="ckeyRun" icon="vscode-icons:file-type-appscript" href="https://ckey.run/" />
   <LinkCard title="在线文生图" icon="token-branded:imgnai" href="https://text2img.srrio.cc/" />
   <LinkCard title="订阅转换器" icon="icon-park:transform" href="https://sublink.srrio.cc/" />
+  <LinkCard title="免费在线拼图工具" icon="icon-park:transform" href="https://collaigo.com/" />
 </CardGrid>
 
 ## 观影
