@@ -7,15 +7,61 @@ config:
 
 <Yiyan />
 
-
 <CardGrid>
-  <Card title="tip" icon="openmoji:star">
+  <Card title="💡 关于本站" icon="openmoji:star">
     记录学习中遇到的知识点和各种有趣的小技巧。 <CustomDateTime />
   </Card>
 
   <RepoCard repo="sreio/sreio-docs" />
 </CardGrid>
 
+## 📚 文档分类
+
+### 编程语言
+<CardGrid>
+  <LinkCard title="Golang" icon="logos:go" href="/golang/" description="Go 语言从入门到进阶，并发编程、gRPC 等" />
+  <LinkCard title="PHP" icon="vscode-icons:file-type-php2" href="/php/" description="PHP 开发与 Laravel 框架深度解析" />
+</CardGrid>
+
+### 数据库
+<CardGrid>
+  <LinkCard title="MySQL" icon="devicon:mysql" href="/mysql/" description="关系型数据库，MySQL 45讲和实践技巧" />
+  <LinkCard title="Redis" icon="devicon:redis" href="/redis/" description="高性能内存缓存数据库" />
+  <LinkCard title="MongoDB" icon="logos:mongodb-icon" href="/mongodb/" description="文档型 NoSQL 数据库" />
+  <LinkCard title="ClickHouse" icon="devicon:clickhouse" href="/clickhouse/" description="列式存储分析数据库" />
+  <LinkCard title="Etcd" icon="logos:etcd" href="/etcd/" description="分布式键值存储系统" />
+</CardGrid>
+
+### DevOps & 运维
+<CardGrid>
+  <LinkCard title="Docker" icon="logos:docker-icon" href="/docker/" description="容器化技术从入门到实践" />
+  <LinkCard title="Kubernetes" icon="logos:kubernetes" href="/k8s/" description="容器编排平台" />
+  <LinkCard title="Linux" icon="devicon:linux" href="/linux/" description="Linux 系统管理与运维" />
+  <LinkCard title="Nginx" icon="devicon:nginx" href="/nginx/" description="高性能 Web 服务器" />
+  <LinkCard title="ELK" icon="simple-icons:elastic" href="/ELK/" description="日志收集分析系统" />
+  <LinkCard title="Git" icon="devicon:git" href="/git/" description="分布式版本控制" />
+  <LinkCard title="GitLab" icon="logos:gitlab" href="/gitlab/" description="代码托管与 CI/CD" />
+</CardGrid>
+
+### 中间件
+<CardGrid>
+  <LinkCard title="消息队列" icon="devicon:rabbitmq" href="/queue/" description="RabbitMQ 与 Kafka 消息队列" />
+</CardGrid>
+
+### 基础知识
+<CardGrid>
+  <LinkCard title="数据结构与算法" icon="icon-park:brain" href="/brain/" description="算法入门、数据结构实现和算法案例" />
+  <LinkCard title="网络协议" icon="streamline-plump-color:cloud-data-transfer-flat" href="/network/" description="HTTP、TCP/IP、IPv4/IPv6 等网络协议" />
+</CardGrid>
+
+### 其他
+<CardGrid>
+  <LinkCard title="AI" icon="streamline-flex-color:ai-chip-robot" href="/ai/" description="人工智能、LLM、Transformer" />
+  <LinkCard title="面试宝典" icon="openmoji:interview" href="/interview/" description="技术面试题集与经验分享" />
+  <LinkCard title="IT 名词" icon="logos:internetexplorer" href="/it/" description="IT 术语词汇表" />
+  <LinkCard title="程序员发音" icon="tdesign:user-talk-1" href="/cpwp/" description="技术名词发音指南" />
+  <LinkCard title="网站导航" icon="icon-park:other" href="/sites/" description="常用技术网站导航" />
+</CardGrid>
 
 <br/>
 

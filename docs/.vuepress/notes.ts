@@ -3,160 +3,235 @@
  *
  * Notes 配置文件，它在 `.vuepress/plume.config.ts` 中被导入。
  *
- * 请注意，你应该先在这里配置好 Notes，然后再启动 vuepress，主题会在启动 vuepress 时，
- * 读取这里配置的 Notes，然后在与 Note 相关的 Markdown 文件中，自动生成 permalink。
- *
- * 如果你发现 侧边栏没有显示，那么请检查你的配置是否正确，以及 Markdown 文件中的 permalink
- * 是否是以对应的 note 配置的 link 的前缀开头。 是否展示侧边栏是根据 页面链接 的前缀 与 `note.link`
- * 的前缀是否匹配来决定。
+ * ==================== 目录分类规范 ====================
+ * 
+ * 📚 languages/     - 编程语言相关 (golang, php, python, java...)
+ * 💾 database/      - 数据库与缓存 (mysql, redis, mongodb, clickhouse, etcd...)
+ * 🛠️ devops/        - DevOps 与运维 (docker, k8s, linux, nginx, elk, git...)
+ * 📬 middleware/    - 中间件服务 (queue/消息队列, rpc...)
+ * 📐 fundamentals/  - 基础知识 (algorithm/算法, network/网络, design-pattern/设计模式...)
+ * 🤖 ai/            - 人工智能 (llm, ml, transformer...)
+ * 💼 interview/     - 面试相关 (按技术栈分类)
+ * 📖 reference/     - 参考资料 (glossary/术语, pronunciation/发音, sites/导航...)
+ * 🔧 tools/         - 工具指南 (vpn, ide, terminal...)
+ * 🚗 life/          - 生活相关 (driving/驾照, hobbies...)
+ * 
+ * 注意：link 配置使用原有路径以保持 URL 向后兼容
+ * ==================================================
  */
 
-/**
- * 在受支持的 IDE 中会智能提示配置项。
- *
- * - `defineNoteConfig` 是用于定义单个 note 配置的帮助函数
- * - `defineNotesConfig` 是用于定义 notes 集合的帮助函数
- *
- * 通过 `defineNoteConfig` 定义的 note 配置，应该填入 `defineNotesConfig` 的 notes 数组中
- */
 import { defineNoteConfig, defineNotesConfig } from 'vuepress-theme-plume'
 
-const golangStudy = defineNoteConfig({
-  // `dir` 所指向的目录中的所有 markdown 文件，其 permalink 需要以 `link` 配置作为前缀
-  // 如果 前缀不一致，则无法生成侧边栏。
-  // 所以请确保  markdown 文件的 permalink 都以 `link` 开头
-  dir: '/golang/',
-  link: '/golang/',
-  // 手动配置侧边栏结构
-  // sidebar: ['', 'foo', 'bar'],
-  // 根据文件结构自动生成侧边栏
+// ==================== 编程语言 ====================
+// 物理路径: /languages/golang/  |  URL路径: /golang/
+const golangConfig = defineNoteConfig({
+  dir: '/languages/golang/',
+  link: '/golang/',  // 保持原有 URL
   sidebar: 'auto'
 })
 
+// 物理路径: /languages/php/  |  URL路径: /php/
 const phpConfig = defineNoteConfig({
-  dir: '/php/',
-  link: '/php/',
+  dir: '/languages/php/',
+  link: '/php/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
+// ==================== 数据库 ====================
+const mysqlConfig = defineNoteConfig({
+  dir: '/database/mysql/',
+  link: '/mysql/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const redisConfig = defineNoteConfig({
+  dir: '/database/redis/',
+  link: '/redis/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const mongodbConfig = defineNoteConfig({
+  dir: '/database/mongodb/',
+  link: '/mongodb/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const clickhouseConfig = defineNoteConfig({
+  dir: '/database/clickhouse/',
+  link: '/clickhouse/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const etcdConfig = defineNoteConfig({
+  dir: '/database/etcd/',
+  link: '/etcd/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+// ==================== DevOps ====================
+const dockerConfig = defineNoteConfig({
+  dir: '/devops/docker/',
+  link: '/docker/',  // 新 URL (原来在 linux 下)
+  sidebar: 'auto',
+})
+
+const k8sConfig = defineNoteConfig({
+  dir: '/devops/k8s/',
+  link: '/k8s/',  // 新 URL (原来在 linux 下)
+  sidebar: 'auto',
+})
+
+const linuxConfig = defineNoteConfig({
+  dir: '/devops/linux/',
+  link: '/linux/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const nginxConfig = defineNoteConfig({
+  dir: '/devops/nginx/',
+  link: '/nginx/',  // 新 URL (原来在 linux 下)
+  sidebar: 'auto',
+})
+
+const elkConfig = defineNoteConfig({
+  dir: '/devops/elk/',
+  link: '/ELK/',  // 保持原有 URL (注意大写)
+  sidebar: 'auto',
+})
+
+const gitConfig = defineNoteConfig({
+  dir: '/devops/git/',
+  link: '/git/',  // 新 URL (原来在 linux 下)
+  sidebar: 'auto',
+})
+
+const gitlabConfig = defineNoteConfig({
+  dir: '/devops/gitlab/',
+  link: '/gitlab/',  // 新 URL (原来在 linux 下)
+  sidebar: 'auto',
+})
+
+// ==================== 中间件 ====================
+const queueConfig = defineNoteConfig({
+  dir: '/middleware/queue/',
+  link: '/queue/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+// ==================== 基础知识 ====================
+const algorithmConfig = defineNoteConfig({
+  dir: '/fundamentals/algorithm/',
+  link: '/brain/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+const networkConfig = defineNoteConfig({
+  dir: '/fundamentals/network/',
+  link: '/network/',  // 保持原有 URL
+  sidebar: 'auto',
+})
+
+// ==================== AI ====================
 const aiConfig = defineNoteConfig({
   dir: '/ai/',
   link: '/ai/',
   sidebar: 'auto',
 })
 
-
-const brainConfig = defineNoteConfig({
-  dir: '/brain/',
-  link: '/brain/',
-  sidebar: 'auto',
-})
-
-const itConfig = defineNoteConfig({
-  dir: '/it/',
-  link: '/it/',
-  sidebar: 'auto',
-})
-
-const networkConfig = defineNoteConfig({
-  dir: '/network/',
-  link: '/network/',
-  sidebar: 'auto',
-})
-
-const vpnConfig = defineNoteConfig({
-  dir: '/vpn/',
-  link: '/vpn/',
-  sidebar: 'auto',
-})
-
-const carConfig = defineNoteConfig({
-  dir: '/驾照考试/',
-  link: '/驾照考试/',
-  sidebar: 'auto',
-})
-
-const linuxConfig = defineNoteConfig({
-  dir: '/linux/',
-  link: '/linux/',
-  sidebar: 'auto',
-})
-
+// ==================== 面试 ====================
 const interviewConfig = defineNoteConfig({
   dir: '/interview/',
   link: '/interview/',
   sidebar: 'auto',
 })
 
-
-const queueConfig = defineNoteConfig({
-  dir: '/queue/',
-  link: '/queue/',
+// ==================== 参考资料 ====================
+const glossaryConfig = defineNoteConfig({
+  dir: '/reference/glossary/',
+  link: '/it/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
-const mysqlConfig = defineNoteConfig({
-  dir: '/mysql/',
-  link: '/mysql/',
+const pronunciationConfig = defineNoteConfig({
+  dir: '/reference/pronunciation/',
+  link: '/cpwp/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
-const redisConfig = defineNoteConfig({
-  dir: '/redis/',
-  link: '/redis/',
+const sitesConfig = defineNoteConfig({
+  dir: '/reference/sites/',
+  link: '/sites/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
-const elkConfig = defineNoteConfig({
-  dir: '/ELK/',
-  link: '/ELK/',
+// ==================== 工具 ====================
+const vpnConfig = defineNoteConfig({
+  dir: '/tools/vpn/',
+  link: '/vpn/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
-const etcdConfig = defineNoteConfig({
-  dir: '/etcd/',
-  link: '/etcd/',
-  sidebar: 'auto',
-})
-
-
-const clickhouseConfig = defineNoteConfig({
-  dir: '/clickhouse/',
-  link: '/clickhouse/',
-  sidebar: 'auto',
-})
-
-const mongodbConfig = defineNoteConfig({
-  dir: '/mongodb/',
-  link: '/mongodb/',
+// ==================== 生活 ====================
+const drivingConfig = defineNoteConfig({
+  dir: '/life/driving/',
+  link: '/驾照考试/',  // 保持原有 URL
   sidebar: 'auto',
 })
 
 /**
- * 导出所有的 note
- * 每一个 note 都应该填入到 `notes.notes` 数组中
- * （DemoNote 为参考示例，如果不需要它，请删除）
+ * 导出所有的 note 配置
+ * 
+ * 添加新目录时，请按照以下步骤：
+ * 1. 在对应分类下创建 defineNoteConfig
+ * 2. 将配置添加到下方 notes 数组中
+ * 3. 如需在导航栏显示，同时更新 navbar.ts
  */
 export default defineNotesConfig({
   dir: '/',
   link: '/',
   notes: [
-    golangStudy, 
+    // 编程语言
+    golangConfig,
     phpConfig,
-    aiConfig, 
-    brainConfig,
-    itConfig,
-    networkConfig,
-    vpnConfig,
-    carConfig,
-    linuxConfig,
-    interviewConfig,
-    queueConfig,
+
+    // 数据库
     mysqlConfig,
     redisConfig,
-    elkConfig,
-    etcdConfig,
-    clickhouseConfig,
     mongodbConfig,
+    clickhouseConfig,
+    etcdConfig,
+
+    // DevOps
+    dockerConfig,
+    k8sConfig,
+    linuxConfig,
+    nginxConfig,
+    elkConfig,
+    gitConfig,
+    gitlabConfig,
+
+    // 中间件
+    queueConfig,
+
+    // 基础知识
+    algorithmConfig,
+    networkConfig,
+
+    // AI
+    aiConfig,
+
+    // 面试
+    interviewConfig,
+
+    // 参考资料
+    glossaryConfig,
+    pronunciationConfig,
+    sitesConfig,
+
+    // 工具
+    vpnConfig,
+
+    // 生活
+    drivingConfig,
   ],
 })

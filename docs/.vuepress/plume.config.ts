@@ -51,7 +51,7 @@ export default defineThemeConfig({
   profile: {
     avatar: '/favicon.ico',
     name: 'Sreio',
-    description: 'is a free-spirited author sreioThe free-spirited author sreio',
+    description: '记录学习路上的点点滴滴 | 分享技术与经验',
     // circle: true,
     // location: '',
     // organization: '',
